@@ -1,0 +1,371 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  ------------------------------------------------------------
+
+  Location: Lucy Ave. / Sardis St. drainage area (Memphis TN) 
+  Map coordinate system: NAD 1983 StatePlane Tennessee FIPS 4100 Feet 
+  Vertical datum: ft-NAVD88 
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 9
+  Number of subcatchments ... 8
+  Number of nodes ........... 10
+  Number of links ........... 9
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  KMEM_HPCP            D:\TekSupport&Testing\KMEM_HourlyRainfall_1948-2023.dat
+  Rain_1in1hr          Rain_1in1hr                    VOLUME      60 min.
+  SCS2_001y24hr        SCS2_001y24hr                  INTENSITY    6 min.
+  SCS2_002y24hr        SCS2_002y24hr                  INTENSITY    6 min.
+  SCS2_005y24hr        SCS2_005y24hr                  INTENSITY    6 min.
+  SCS2_010y24hr        SCS2_010y24hr                  INTENSITY    6 min.
+  SCS2_025y24hr        SCS2_025y24hr                  INTENSITY    6 min.
+  SCS2_050y24hr        SCS2_050y24hr                  INTENSITY    6 min.
+  SCS2_100y24h         SCS2_100y24h                   INTENSITY    6 min.
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  S01                        1.01    176.00     45.60    3.5000 SCS2_010y24hr        CBMH01              
+  S02                        0.75    135.00     50.70    3.4000 SCS2_010y24hr        CBMH02              
+  S03                        1.30    209.00     55.00    3.7000 SCS2_010y24hr        CBMH03              
+  S04                        1.14    177.00     55.00    3.1000 SCS2_010y24hr        CBMH04              
+  S05                        1.83    249.00     37.00    3.0000 SCS2_010y24hr        CBMH05              
+  S06                        1.24    179.00     43.20    2.7000 SCS2_010y24hr        CBMH06              
+  S07                        1.02    177.00     40.90    4.5000 SCS2_010y24hr        CBMH07              
+  S08                        1.37    175.00     44.40    3.8000 SCS2_010y24hr        CBMH08              
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  CBMH01               JUNCTION            294.05      3.75       0.0
+  CBMH02               JUNCTION            295.74      3.16       0.0
+  CBMH03               JUNCTION            293.83      3.67       0.0
+  CBMH04               JUNCTION            293.44      3.96       0.0
+  CBMH05               JUNCTION            292.45      3.75       0.0
+  CBMH06               JUNCTION            288.12      4.98       0.0
+  CBMH07               JUNCTION            288.60      4.50       0.0
+  CBMH08               JUNCTION            287.91      4.99       0.0
+  MH05                 JUNCTION            291.45      4.25       0.0
+  OF1                  OUTFALL             287.60      3.00       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  C010             CBMH01           CBMH04           CONDUIT           50.0    0.9600    0.0150
+  C020             CBMH02           CBMH03           CONDUIT          235.0    0.5447    0.0150
+  C030             CBMH03           CBMH04           CONDUIT           95.0    0.0526    0.0150
+  C040             CBMH04           MH05             CONDUIT          142.0    1.2748    0.0150
+  C050             MH05             CBMH06           CONDUIT          144.0    1.8753    0.0150
+  C055             CBMH05           MH05             CONDUIT          117.0    0.6581    0.0150
+  C060             CBMH06           CBMH08           CONDUIT           57.0    0.2281    0.0150
+  C070             CBMH07           CBMH08           CONDUIT           31.0    0.2581    0.0150
+  C080             CBMH08           OF1              CONDUIT          220.0    0.1409    0.0150
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  C010             CIRCULAR             1.50     1.77     0.38     1.50        1     8.92
+  C020             CIRCULAR             1.50     1.77     0.38     1.50        1     6.72
+  C030             CIRCULAR             1.75     2.41     0.44     1.75        1     3.15
+  C040             CIRCULAR             2.00     3.14     0.50     2.00        1    22.14
+  C050             CIRCULAR             2.25     3.98     0.56     2.25        1    36.76
+  C055             CIRCULAR             1.75     2.41     0.44     1.75        1    11.14
+  C060             CIRCULAR             2.75     5.94     0.69     2.75        1    21.89
+  C070             CIRCULAR             1.50     1.77     0.38     1.50        1     4.62
+  C080             CIRCULAR             3.00     7.07     0.75     3.00        1    21.70
+  
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Infiltration Method ...... MODIFIED_GREEN_AMPT
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... SLOT
+  Starting Date ............ 01/01/2025 00:00:00
+  Ending Date .............. 01/02/2025 12:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:01:00
+  Wet Time Step ............ 00:01:00
+  Dry Time Step ............ 01:00:00
+  Routing Time Step ........ 1.00 sec
+  Variable Time Step ....... NO
+  Maximum Trials ........... 20
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.000100 ft
+  
+  
+  *********************
+  Rainfall File Summary
+  *********************
+  Station    First        Last         Recording   Periods    Periods    Periods
+  ID         Date         Date         Frequency  w/Precip    Missing    Malfunc.
+  -------------------------------------------------------------------------------
+  405954     09/01/1948   12/25/2023      60 min     45485          0          0
+
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......         4.490         5.580
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........         1.613         2.004
+  Surface Runoff ...........         2.847         3.538
+  Final Storage ............         0.031         0.039
+  Continuity Error (%) .....        -0.017
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         2.847         0.928
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         2.790         0.909
+  Flooding Loss ............         0.057         0.019
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....        -0.009
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Node OF1 (0.01%)
+  Node CBMH08 (0.01%)
+  Node CBMH06 (0.00%)
+  Node CBMH04 (0.00%)
+  Node CBMH01 (0.00%)
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     1.00 sec
+  Average Time Step           :     1.00 sec
+  Maximum Time Step           :     1.00 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     2.02
+  % of Steps Not Converging   :     0.01
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  S01                        5.58       0.00       0.00       2.00       2.51       1.03       3.54        0.10     6.19   0.634
+  S02                        5.58       0.00       0.00       1.81       2.79       0.94       3.73        0.08     4.74   0.668
+  S03                        5.58       0.00       0.00       1.65       3.02       0.86       3.88        0.14     8.32   0.696
+  S04                        5.58       0.00       0.00       1.66       3.02       0.86       3.88        0.12     7.12   0.695
+  S05                        5.58       0.00       0.00       2.35       2.03       1.17       3.20        0.16     9.61   0.574
+  S06                        5.58       0.00       0.00       2.11       2.37       1.06       3.44        0.12     6.88   0.616
+  S07                        5.58       0.00       0.00       2.17       2.25       1.12       3.37        0.09     6.21   0.604
+  S08                        5.58       0.00       0.00       2.06       2.44       1.04       3.48        0.13     7.77   0.624
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  CBMH01               JUNCTION     0.08     3.47   297.52     0  11:54        3.47
+  CBMH02               JUNCTION     0.08     3.16   298.90     0  11:52        2.72
+  CBMH03               JUNCTION     0.21     3.67   297.50     0  11:52        3.67
+  CBMH04               JUNCTION     0.13     3.71   297.15     0  11:54        3.70
+  CBMH05               JUNCTION     0.10     3.67   296.12     0  11:54        3.67
+  CBMH06               JUNCTION     0.25     4.98   293.10     0  11:51        4.98
+  CBMH07               JUNCTION     0.13     4.27   292.87     0  11:54        4.27
+  CBMH08               JUNCTION     0.28     4.63   292.54     0  11:54        4.63
+  MH05                 JUNCTION     0.14     3.92   295.37     0  11:54        3.91
+  OF1                  OUTFALL      0.27     3.00   290.60     0  11:47        3.00
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  CBMH01               JUNCTION      6.19     6.19     0  11:54      0.0972      0.0972      -0.009
+  CBMH02               JUNCTION      4.74     4.74     0  11:54      0.0756      0.0756      -0.207
+  CBMH03               JUNCTION      8.32    13.07     0  11:54       0.137       0.213       0.029
+  CBMH04               JUNCTION      7.12    21.03     0  11:51        0.12       0.417       0.047
+  CBMH05               JUNCTION      9.61     9.61     0  11:54       0.159       0.159      -0.147
+  CBMH06               JUNCTION      6.88    37.00     0  11:54       0.116       0.692      -0.010
+  CBMH07               JUNCTION      6.21     6.21     0  11:54      0.0931      0.0931       0.007
+  CBMH08               JUNCTION      7.77    47.51     0  11:54       0.129       0.909       0.018
+  MH05                 JUNCTION      0.00    30.13     0  11:54           0       0.577      -0.006
+  OF1                  OUTFALL       0.00    47.51     0  11:54           0       0.909       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  CBMH01               JUNCTION        0.17          1.969        0.281
+  CBMH02               JUNCTION        0.15          1.660        0.000
+  CBMH03               JUNCTION        0.18          1.540        0.000
+  CBMH04               JUNCTION        0.17          1.615        0.255
+  CBMH05               JUNCTION        0.18          1.923        0.077
+  CBMH06               JUNCTION        0.33          2.100        0.000
+  CBMH07               JUNCTION        0.41          2.771        0.229
+  CBMH08               JUNCTION        0.33          1.629        0.361
+  MH05                 JUNCTION        0.20          1.665        0.335
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  Flooding refers to all water that overflows a node, whether it ponds or not.
+  --------------------------------------------------------------------------
+                                                             Total   Maximum
+                                 Maximum   Time of Max       Flood    Ponded
+                        Hours       Rate    Occurrence      Volume     Depth
+  Node                 Flooded       CFS   days hr:min    10^6 gal      Feet
+  --------------------------------------------------------------------------
+  CBMH02                  0.01      1.74      0  11:52       0.000     0.000
+  CBMH03                  0.14      5.82      0  11:54       0.013     0.000
+  CBMH06                  0.14      3.47      0  11:54       0.006     0.000
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  OF1                   83.13      1.13     47.51       0.909
+  -----------------------------------------------------------
+  System                83.13      1.13     47.51       0.909
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  C010                 CONDUIT      6.20     0  11:54      3.51    0.69    1.00
+  C020                 CONDUIT      5.31     0  11:52      3.00    0.79    1.00
+  C030                 CONDUIT     10.29     0  11:51      4.33    3.27    1.00
+  C040                 CONDUIT     20.64     0  11:52      7.52    0.93    1.00
+  C050                 CONDUIT     30.15     0  11:54      7.58    0.82    1.00
+  C055                 CONDUIT      9.61     0  11:54      4.21    0.86    1.00
+  C060                 CONDUIT     35.10     0  12:00      5.91    1.60    1.00
+  C070                 CONDUIT      6.21     0  11:54      3.51    1.34    1.00
+  C080                 CONDUIT     47.51     0  11:54      6.72    2.19    1.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  C010                    1.00   0.00  0.00  0.00  0.03  0.02  0.00  0.95  0.02  0.00
+  C020                    1.00   0.00  0.00  0.00  0.01  0.00  0.00  0.99  0.01  0.00
+  C030                    1.00   0.00  0.00  0.00  0.01  0.00  0.00  0.99  0.00  0.00
+  C040                    1.00   0.00  0.00  0.00  0.01  0.00  0.00  0.99  0.00  0.00
+  C050                    1.00   0.00  0.00  0.00  0.01  0.01  0.00  0.98  0.01  0.00
+  C055                    1.00   0.00  0.00  0.00  0.01  0.00  0.00  0.99  0.00  0.00
+  C060                    1.00   0.00  0.00  0.00  0.62  0.00  0.00  0.38  0.00  0.00
+  C070                    1.00   0.00  0.00  0.00  0.04  0.00  0.00  0.96  0.00  0.00
+  C080                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.29  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  C010                        0.17      0.17      0.19      0.01         0.01
+  C020                        0.15      0.15      0.18      0.01         0.01
+  C030                        0.17      0.22      0.17      0.46         0.18
+  C040                        0.17      0.17      0.20      0.01         0.01
+  C050                        0.20      0.20      0.33      0.01         0.01
+  C055                        0.18      0.18      0.21      0.01         0.01
+  C060                        0.33      0.34      0.34      0.25         0.32
+  C070                        0.41      0.41      0.42      0.17         0.25
+  C080                        0.32      0.33      0.33      0.33         0.32
+  
+
+  Analysis begun on:  Mon Feb  3 09:45:25 2025
+  Analysis ended on:  Mon Feb  3 09:45:27 2025
+  Total elapsed time: 00:00:02
